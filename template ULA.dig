@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes/>
   <visualElements>
     <visualElement>
@@ -42,7 +42,7 @@
           <int>32</int>
         </entry>
       </elementAttributes>
-      <pos x="900" y="200"/>
+      <pos x="920" y="260"/>
     </visualElement>
     <visualElement>
       <elementName>In</elementName>
@@ -103,8 +103,25 @@
         </entry>
         <entry>
           <string>Code</string>
-          <string>module ULA(input operand1, operand2, ALU_control_vector, output zero, ALU_result);
+          <string>module ULA (operand1, operand2, ALU_control_vector, zero, ALU_result);
+	input wire [31:0] operand1, operand2;
+	input wire [3:0] ALU_control_vector;
+	output reg zero;
+	output [31:0] ALU_result;
+	reg [31:0] out;
+	always @* begin
+		case (ALU_control_vector)
+			4&apos;b0000: out = operand1 &amp; operand2; 
+			4&apos;b0001: out = operand1 | operand2;
+			4&apos;b0010: out = operand1 + operand2;
+			4&apos;b0110: out = operand1 - operand2;
+			4&apos;b0111: out = operand1 &lt; operand2;
+			4&apos;b1100: out = !operand1 &amp;&amp; !operand2;
+		endcase;
 
+		zero = out == 0;
+	end;
+	assign ALU_result = out;
 endmodule</string>
         </entry>
         <entry>
@@ -151,6 +168,10 @@ endmodule</string>
       <p2 x="880" y="180"/>
     </wire>
     <wire>
+      <p1 x="900" y="260"/>
+      <p2 x="920" y="260"/>
+    </wire>
+    <wire>
       <p1 x="820" y="200"/>
       <p2 x="900" y="200"/>
     </wire>
@@ -165,6 +186,10 @@ endmodule</string>
     <wire>
       <p1 x="880" y="160"/>
       <p2 x="880" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="900" y="200"/>
+      <p2 x="900" y="260"/>
     </wire>
     <wire>
       <p1 x="540" y="160"/>

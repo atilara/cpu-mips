@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes/>
   <visualElements>
     <visualElement>
@@ -68,8 +68,10 @@
         </entry>
         <entry>
           <string>Code</string>
-          <string>module ExtensorSinal(input  A, output Y);
-   
+          <string>module ExtensorSinal(A, Y);
+   input [15:0] A;
+   output [31:0] Y;
+   assign Y = {{16{A[15]}}, A};
 endmodule</string>
         </entry>
         <entry>

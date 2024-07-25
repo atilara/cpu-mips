@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>A</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>B</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>S</string>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>MuX_2to1_5bits</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:5,B:5,S</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>4</int>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>module MuX_2to1_5bits(A, B, S, Y);
+	input wire [4:0] A, B;
+	input wire S;
+	output wire [4:0] Y;
+	assign Y = S == 0 ? A : B;
+endmodule;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Y:5</string>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>A</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>B</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>S</string>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Mux_2to1_32bits</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32,B:32,S</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>4</int>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>module Mux_2to1_32bits(A, B, S, Y);
+	input wire [31:0] A, B;
+	input wire S;
+	output wire [31:0] Y;
+	assign Y = S == 0 ? A : B;
+endmodule;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Y:32</string>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="640" y="280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="500"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="440" y="680"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Soma4</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>module Soma4(input wire [31:0] A, output wire [31:0] Y);
+	assign Y = A + 4;
+endmodule;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Y:32</string>
+        </entry>
+      </elementAttributes>
+      <pos x="520" y="680"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="640" y="680"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>somaPcDesvio</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>endereco:32,desvio:32</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>module somaPcDesvio(endereco, desvio, enderecoDesvio);
+	input wire [31:0] endereco, desvio;
+	output wire [31:0] enderecoDesvio;
+	assign enderecoDesvio = endereco + (desvio * 4);
+endmodule;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>enderecoDesvio:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>12</int>
+        </entry>
+      </elementAttributes>
+      <pos x="560" y="840"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+        <entry>
+          <string>intFormat</string>
+          <intFormat>dec</intFormat>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="860"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="440" y="820"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="440" y="900"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RegistradorPC</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32,Clk,Rst</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>module RegistradorPC(input [31:0] A, input Clk, input Rst, output reg [31:0] Y);
+	always @(posedge Clk) begin
+		if(Rst == 0) begin	
+			Y = 0;
+		end else 
+			Y = A;
+	end;
+endmodule;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Y:32</string>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="1060"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="1020"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>InDefault</string>
+          <value v="1" z="false"/>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="1140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="720" y="1080"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>runRealTime</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="1080"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Data</elementName>
+      <elementAttributes>
+        <entry>
+          <string>microStep</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="1440" y="840"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>BancoReg</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>RegRd1:5,RegRd2:5,RegWr:5,WrData:32,Write,rst,clk,RbAdd:5</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>module BancoReg(RegRd1, RegRd2, RegWr, WrData, Write, rst, clk, RbAdd, RdData1, RdData2, Rb);
+	input wire [4:0] RegRd1, RegRd2, RegWr;
+	input wire [31:0] WrData;
+	input wire Write, rst, clk;
+	input [4:0] RbAdd;
+	output wire [31:0] RdData1, RdData2, Rb;
+	reg [31:0] registers [31:0];
+
+	always @(posedge clk) begin
+		if (rst) begin
+      			for (integer i = 0; i &lt; 32; i++) begin
+        			registers[i] &lt;= i;
+      			end;
+    		end
+		else if (Write == 1) begin
+			registers[RegWr] = WrData;
+		end;
+	end;
+	
+	assign RdData1 = registers[RegRd1];
+	assign RdData2 = registers[RegRd2];
+	assign Rb = registers[RbAdd];
+endmodule;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>RdData1:32,RdData2:32,Rb:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>9</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1260" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RegRd1</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RegRd2</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RegWr</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>WrData</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Write</string>
+        </entry>
+        <entry>
+          <string>InDefault</string>
+          <value v="1" z="false"/>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>rst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="560"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RbAdd</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>5</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="720"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>clk</string>
+        </entry>
+        <entry>
+          <string>runRealTime</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="640"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RdData1</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1520" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RdData2</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1520" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Rb</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1520" y="500"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="400" y="320"/>
+      <p2 x="480" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="320"/>
+      <p2 x="1180" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="640"/>
+      <p2 x="1080" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="260"/>
+      <p2 x="500" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="260"/>
+      <p2 x="460" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="440" y="900"/>
+      <p2 x="520" y="900"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="520"/>
+      <p2 x="500" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="520"/>
+      <p2 x="1260" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="200"/>
+      <p2 x="480" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="840"/>
+      <p2 x="560" y="840"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="1100"/>
+      <p2 x="620" y="1100"/>
+    </wire>
+    <wire>
+      <p1 x="1040" y="460"/>
+      <p2 x="1260" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="400"/>
+      <p2 x="1260" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="400"/>
+      <p2 x="1160" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1440" y="400"/>
+      <p2 x="1500" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="720"/>
+      <p2 x="1100" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="1480" y="340"/>
+      <p2 x="1520" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="280"/>
+      <p2 x="500" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="280"/>
+      <p2 x="640" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="540"/>
+      <p2 x="480" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="800" y="860"/>
+      <p2 x="900" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="480"/>
+      <p2 x="500" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="480"/>
+      <p2 x="460" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="480"/>
+      <p2 x="1040" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="480"/>
+      <p2 x="1260" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="160"/>
+      <p2 x="1220" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="400" y="420"/>
+      <p2 x="480" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1180" y="420"/>
+      <p2 x="1260" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1500" y="420"/>
+      <p2 x="1520" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1440" y="420"/>
+      <p2 x="1480" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="1060"/>
+      <p2 x="620" y="1060"/>
+    </wire>
+    <wire>
+      <p1 x="440" y="680"/>
+      <p2 x="520" y="680"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="680"/>
+      <p2 x="640" y="680"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="300"/>
+      <p2 x="500" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="880"/>
+      <p2 x="560" y="880"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="240"/>
+      <p2 x="1200" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="560"/>
+      <p2 x="1060" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="500"/>
+      <p2 x="500" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="500"/>
+      <p2 x="660" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="1080" y="500"/>
+      <p2 x="1260" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="1480" y="500"/>
+      <p2 x="1520" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="440" y="820"/>
+      <p2 x="520" y="820"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="1140"/>
+      <p2 x="540" y="1140"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="1080"/>
+      <p2 x="620" y="1080"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="1080"/>
+      <p2 x="720" y="1080"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="440"/>
+      <p2 x="1260" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="1020"/>
+      <p2 x="540" y="1020"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="380"/>
+      <p2 x="1260" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1440" y="380"/>
+      <p2 x="1480" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="200"/>
+      <p2 x="480" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="300"/>
+      <p2 x="480" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="420"/>
+      <p2 x="480" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="520"/>
+      <p2 x="480" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="160"/>
+      <p2 x="1220" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="480"/>
+      <p2 x="1060" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="820"/>
+      <p2 x="520" y="840"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="880"/>
+      <p2 x="520" y="900"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="400"/>
+      <p2 x="1160" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="1480" y="340"/>
+      <p2 x="1480" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1480" y="420"/>
+      <p2 x="1480" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="260"/>
+      <p2 x="460" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="480"/>
+      <p2 x="460" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="520"/>
+      <p2 x="1100" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="240"/>
+      <p2 x="1200" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1040" y="460"/>
+      <p2 x="1040" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1080" y="500"/>
+      <p2 x="1080" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="1020"/>
+      <p2 x="540" y="1060"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="1100"/>
+      <p2 x="540" y="1140"/>
+    </wire>
+    <wire>
+      <p1 x="1180" y="320"/>
+      <p2 x="1180" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1500" y="400"/>
+      <p2 x="1500" y="420"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>

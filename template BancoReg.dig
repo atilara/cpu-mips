@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes/>
   <visualElements>
     <visualElement>
@@ -115,18 +115,40 @@ end loop</dataString>
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>RegRd1,RegRd2,RegWr,WrData,Write,rst,clk,RbAdd</string>
+          <string>RegRd1:5,RegRd2:5,RegWr:5,WrData:32,Write,rst,clk,RbAdd</string>
         </entry>
         <entry>
           <string>Code</string>
-          <string>module BancoReg( input RegRd1, RegRd2, RegWr,  WrData, input Write, rst,  clk, RbAdd, output RdData1, RdData2, Rb);
+          <string>module BancoReg( RegRd1, RegRd2, RegWr,  WrData, Write, rst,  clk, RbAdd, RdData1, RdData2, Rb);
+	input wire [4:0] RegRd1, RegRd2, RegWr;
+	input wire [31:0] WrData;
+	input wire Write, rst, clk;
+	input RbAdd;
+	output wire [31:0] RdData1, RdData2, Rb;
+	reg [31:0] registers [31:0];
 
+	always @(posedge clk) begin
+		if (Write == 1) begin
+			registers[RegWr] = WrData;
+		end;
+	end;
+	always @* begin
 
+		if (rst) begin
+      			for (integer i = 0; i &lt; 32; i++) begin
+        			registers[i] &lt;= i;
+      			end;
+    		end
+	end;
+	
+	assign RdData1 = registers[RegRd1];
+	assign RdData2 = registers[RegRd2];
+	assign Rb = registers[RbAdd];
 endmodule</string>
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>RdData1,RdData2,Rb</string>
+          <string>RdData1:32,RdData2:32,Rb:32</string>
         </entry>
         <entry>
           <string>Width</string>
